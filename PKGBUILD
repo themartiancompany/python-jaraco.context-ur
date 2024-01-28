@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0
+#
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-jaraco.context
@@ -29,3 +31,5 @@ package() {
   python -m installer -d "$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
+
+# vim:set sw=2 sts=-1 et:
