@@ -1,0 +1,18 @@
+pkgbase = python-jaraco.context
+	pkgdesc = Context managers by jaraco
+	pkgver = 4.3.0
+	pkgrel = 4
+	url = https://github.com/jaraco/jaraco.context
+	arch = any
+	license = MIT
+	checkdepends = python-pytest
+	makedepends = git
+	makedepends = python-setuptools-scm
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-wheel
+	depends = python
+	source = git+https://github.com/jaraco/jaraco.context.git#commit=0e0ae08919b984e3c7cffdb2106e437d0d0891c8
+	sha512sums = SKIP
+
+pkgname = python-jaraco.context
