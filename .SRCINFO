@@ -6,13 +6,12 @@ pkgbase = python-jaraco.context
 	arch = any
 	license = MIT
 	checkdepends = python-pytest
-	makedepends = git
 	makedepends = python-setuptools-scm
 	makedepends = python-build
 	makedepends = python-installer
 	makedepends = python-wheel
-	depends = python
-	source = git+https://github.com/jaraco/jaraco.context.git#commit=0e0ae08919b984e3c7cffdb2106e437d0d0891c8
-	sha512sums = SKIP
+	depends = python>=3.12
+	source = jaraco.context-0e0ae08919b984e3c7cffdb2106e437d0d0891c8.zip::https://github.com/jaraco/jaraco.context/archive/0e0ae08919b984e3c7cffdb2106e437d0d0891c8.zip
+	sha512sums = bb6ce7a4e2c9ef94d7ca1e4ad45a550b97454f7b9fbf2b4c8d2235cfe3615b52
 
 pkgname = python-jaraco.context
