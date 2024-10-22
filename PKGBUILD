@@ -80,7 +80,6 @@ sha256sums=(
 )
 
 build() {
-  ls 
   cd \
     "${_tarname}"
   "${_py}" \
