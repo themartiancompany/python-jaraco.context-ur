@@ -23,9 +23,9 @@ _proj="jaraco"
 _pkg="${_proj}.context"
 _py="python"
 pkgname="${_py}-${_pkg}"
-pkgver=4.3.0
-_commit="0e0ae08919b984e3c7cffdb2106e437d0d0891c8"
-pkgrel=3
+pkgver=5.3.0
+_commit="e0e9224b3dbe6520c986bf41820f882160dd55ab"
+pkgrel=1
 pkgdesc="Context managers by jaraco"
 _http="https://github.com"
 url="${_http}/${_proj}/${_pkg}"
@@ -38,15 +38,22 @@ arch=(
 depends=(
   "${_py}>=${_pymajver}"
 )
+checkdepends=(
+  "${_py}-portend"
+  "${_py}-pytest"
+)
 makedepends=(
   "${_py}-setuptools-scm"
   "${_py}-build"
   "${_py}-installer"
   "${_py}-wheel"
 )
-_tag="${_commit}"
-_tag_name="commit"
+# _tag="${_commit}"
+# _tag_name="commit"
+_tag="${pkgver}"
+_tag_name="tag"
 _tarname="${_pkg}-${_tag}"
+_pypi="https://pypi.io/packages/source"
 if [[ "${_git}" == "true" ]]; then
   makedepends+=(
     'git'
@@ -54,8 +61,13 @@ if [[ "${_git}" == "true" ]]; then
   _src="${_tarname}::git+${url}.git#${_tag_name}=${_tag}"
   _sum="SKIP"
 elif [[ "${_git}" == "false" ]]; then
-  _src="${_tarname}.zip::${url}/archive/${_commit}.zip"
-  _sum="bb6ce7a4e2c9ef94d7ca1e4ad45a550b97454f7b9fbf2b4c8d2235cfe3615b52"
+  _src="${_tarname}.tar.gz::${_pypi}/${_pkg::1}/${_pkg}/${_pkg}-${pkgver}.tar.gz"
+  _sum="c2f67165ce1f9be20f32f650f25d8edfc1646a8aeee48ae06fb35f90763576d2"
+  # _src="${_tarname}.zip::${url}/archive/${_commit}.zip"
+  # 5.3.0
+  # _sum='6082cf806d60affa9625088dec55656e48afd0c5ab42aa139031c77a6cbe34822cd56b9cdf653c2d6b761b277caaf24b75c14ffa220bd5cda4b2e82dac73523d'
+  # 6.0.1
+  # _sum='353d3a3ad6fc2fdd66e4e701b13c725373ffd4d44ec91ecd31f5ae9194e7605175dff48ee8d84f81859283a984e2eacd56e7408a5604c55ce4075f16d3c7a67b'
 fi
 checkdepends=(
   "${_py}-pytest"
@@ -63,11 +75,12 @@ checkdepends=(
 source=(
   "${_src}"
 )
-sha512sums=(
+sha256sums=(
   "${_sum}"
 )
 
 build() {
+  ls 
   cd \
     "${_tarname}"
   "${_py}" \

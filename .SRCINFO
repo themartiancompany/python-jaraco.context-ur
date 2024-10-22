@@ -1,7 +1,7 @@
 pkgbase = python-jaraco.context
 	pkgdesc = Context managers by jaraco
-	pkgver = 4.3.0
-	pkgrel = 3
+	pkgver = 5.3.0
+	pkgrel = 1
 	url = https://github.com/jaraco/jaraco.context
 	arch = any
 	license = MIT
@@ -11,7 +11,7 @@ pkgbase = python-jaraco.context
 	makedepends = python-installer
 	makedepends = python-wheel
 	depends = python>=3.12
-	source = jaraco.context-0e0ae08919b984e3c7cffdb2106e437d0d0891c8.zip::https://github.com/jaraco/jaraco.context/archive/0e0ae08919b984e3c7cffdb2106e437d0d0891c8.zip
-	sha512sums = bb6ce7a4e2c9ef94d7ca1e4ad45a550b97454f7b9fbf2b4c8d2235cfe3615b52
+	source = jaraco.context-5.3.0.tar.gz::https://pypi.io/packages/source/j/jaraco.context/jaraco.context-5.3.0.tar.gz
+	sha256sums = c2f67165ce1f9be20f32f650f25d8edfc1646a8aeee48ae06fb35f90763576d2
 
 pkgname = python-jaraco.context
