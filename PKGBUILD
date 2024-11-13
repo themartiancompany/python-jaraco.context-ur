@@ -19,6 +19,9 @@ _pyver="$( \
     awk \
       '{print $2}')"
 _pymajver="${_pyver%.*}"
+_pyminver="${_pymajver#*.}"
+_pynextver="${_pymajver%.*}.$(( \
+  ${_pyminver} + 1))"
 _proj="jaraco"
 _pkg="${_proj}.context"
 _py="python"
@@ -37,6 +40,7 @@ arch=(
 )
 depends=(
   "${_py}>=${_pymajver}"
+  "${_py}<${_pynextver}"
 )
 checkdepends=(
   "${_py}-portend"
